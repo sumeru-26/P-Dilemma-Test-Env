@@ -43,7 +43,7 @@ class TF2T:
 
 
 class T2FT:
-    name = "2 Tit For Tat"
+    name = "2 Tits For Tat"
     score = 0
     matches = 0
 
