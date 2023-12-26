@@ -22,7 +22,7 @@ Tit For 2 Tats - Cooperate on the first move. Defect twice if the opponent defec
 
 2 Tits For Tat - Cooperate on the first two moves. Defect if the opponent defects twice in a row.
 
-Slow TFT - Cooperate on the first two moves. If the opponent makes two of the same move, copy, otherwise use their previous move.
+Slow TFT - Cooperate on the first two moves. If the opponent makes two of the same move, copy, otherwise use my previous move.
 
 Majority - Defect if the opponent has defected more than they have cooperated.
 
