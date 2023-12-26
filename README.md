@@ -39,3 +39,5 @@ Mistrust - Defect on the first move. Use the opponent's previous move for the cu
 Prober - Cooperate on the first move and defect on the next two. If the opponent responded to the defects with C, defect, otherwise use their previous move.
 
 JOSS - Same as TFT but cooperates only with 90% probability.
+
+Last Step Neutral - Always cooperates if the opponent cooperates, and retaliates with 50% probability.

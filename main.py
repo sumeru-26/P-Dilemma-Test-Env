@@ -18,6 +18,7 @@ programs = [
     Majority(),
     Majority5(),
     Majority11(),
+    LSN(),
     AllD(),
     Mistrust(),
     Prober(),
@@ -25,7 +26,7 @@ programs = [
     Random(),
 ]
 
-copies = 1
+copies = 5
 rounds = 150
 num_programs = len(programs)
 

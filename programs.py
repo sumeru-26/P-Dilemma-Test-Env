@@ -151,6 +151,26 @@ class Majority11:
             return "C"
 
 
+class LSN:
+    name = "Last Step Neutral"
+    score = 0
+    matches = 0
+
+    def reponse(self, state):
+        tick, my_history, their_history = state.split(";")
+        tick = int(tick)
+        if tick == 0:
+            return "C"
+        else:
+            if their_history[-1] == "D":
+                if random.random() < 0.5:
+                    return "D"
+                else:
+                    return "C"
+            else:
+                return "C"
+
+
 # Nasty
 class AllD:
     name = "All D"
