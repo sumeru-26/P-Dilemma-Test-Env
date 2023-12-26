@@ -194,6 +194,26 @@ class Prober:
                 return their_history[-1]
 
 
+class JOSS:
+    name = "JOSS"
+    score = 0
+    matches = 0
+
+    def reponse(self, state):
+        tick, my_history, their_history = state.split(";")
+        tick = int(tick)
+        if tick == 0:
+            return "C"
+        else:
+            if their_history[-1] == "C":
+                if random.random() < 0.9:
+                    return "C"
+                else:
+                    return "D"
+            else:
+                return "D"
+
+
 # Neither
 class Random:
     name = "Random"

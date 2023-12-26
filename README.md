@@ -24,12 +24,18 @@ Tit For 2 Tats - Cooperate on the first move. Defect twice if the opponent defec
 
 Slow TFT - Cooperate on the first two moves. If the opponent makes two of the same move, copy, otherwise use my previous move.
 
-Majority - Defect if the opponent has defected more than they have cooperated.
-
 Pavlov - Cooperate on the first move. If the opponent makes the same move as us, cooperate, otherwise defect.
 
 Punisher - Cooperate until the opponent defects once. Then only defect.
 
+Majority - Defect if the opponent has defected more than they have cooperated.
+
+Majority 5 - Same Rules as Majority but only considers last 5 turns.
+
+Majority 11 - Same Rules as Majority but only considers last 11 turns.
+
 Mistrust - Defect on the first move. Use the opponent's previous move for the current move.
 
 Prober - Cooperate on the first move and defect on the next two. If the opponent responded to the defects with C, defect, otherwise use their previous move.
+
+JOSS - Same as TFT but cooperates only with 90% probability.

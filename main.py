@@ -21,10 +21,11 @@ programs = [
     AllD(),
     Mistrust(),
     Prober(),
+    JOSS(),
     Random(),
 ]
 
-copies = 5
+copies = 1
 rounds = 150
 num_programs = len(programs)
 
