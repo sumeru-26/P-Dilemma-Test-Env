@@ -78,20 +78,6 @@ class SlowTFT:
                 return my_history[-1]
 
 
-class Majority:
-    name = "Majority"
-    score = 0
-    matches = 0
-
-    def reponse(self, state):
-        tick, my_history, their_history = state.split(";")
-        tick = int(tick)
-        if my_history.count("D") > my_history.count("C"):
-            return "D"
-        else:
-            return "C"
-
-
 class Pavlov:
     name = "Pavlov"
     score = 0
@@ -118,6 +104,48 @@ class Punisher:
         tick, my_history, their_history = state.split(";")
         tick = int(tick)
         if their_history.count("D") > 0:
+            return "D"
+        else:
+            return "C"
+
+
+class Majority:
+    name = "Majority"
+    score = 0
+    matches = 0
+
+    def reponse(self, state):
+        tick, my_history, their_history = state.split(";")
+        tick = int(tick)
+        if my_history.count("D") > my_history.count("C"):
+            return "D"
+        else:
+            return "C"
+
+
+class Majority5:
+    name = "Majority 5"
+    score = 0
+    matches = 0
+
+    def reponse(self, state):
+        tick, my_history, their_history = state.split(";")
+        tick = int(tick)
+        if my_history[-5:].count("D") > my_history[-5:].count("C"):
+            return "D"
+        else:
+            return "C"
+
+
+class Majority11:
+    name = "Majority 11"
+    score = 0
+    matches = 0
+
+    def reponse(self, state):
+        tick, my_history, their_history = state.split(";")
+        tick = int(tick)
+        if my_history[-11:].count("D") > my_history[-11:].count("C"):
             return "D"
         else:
             return "C"

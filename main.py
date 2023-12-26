@@ -13,13 +13,15 @@ programs = [
     TF2T(),
     T2FT(),
     SlowTFT(),
-    Majority(),
     Pavlov(),
     Punisher(),
+    Majority(),
+    Majority5(),
+    Majority11(),
     AllD(),
     Mistrust(),
     Prober(),
-    # Random(),
+    Random(),
 ]
 
 copies = 5
