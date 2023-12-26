@@ -109,13 +109,10 @@ class Friedman:
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
         tick = int(tick)
-        if tick == 0:
-            return "C"
+        if their_history.count("D") > 0:
+            return "D"
         else:
-            if their_history.count("D") > 0:
-                return "D"
-            else:
-                return "C"
+            return "C"
 
 
 # Nasty
