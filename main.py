@@ -15,10 +15,9 @@ programs = [
     SlowTFT(),
     SoftMajority(),
     Pavlov(),
-    Friedman(),
+    Punisher(),
     AllD(),
     Mistrust(),
-    HardMajority(),
     Prober(),
     # Random(),
 ]

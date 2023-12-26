@@ -109,8 +109,8 @@ class Pavlov:
                 return "D"
 
 
-class Friedman:
-    name = "Friedman"
+class Punisher:
+    name = "Punisher"
     score = 0
     matches = 0
 
@@ -145,20 +145,6 @@ class Mistrust:
             return "D"
         else:
             return their_history[-1]
-
-
-class HardMajority:
-    name = "Hard Majority"
-    score = 0
-    matches = 0
-
-    def reponse(self, state):
-        tick, my_history, their_history = state.split(";")
-        tick = int(tick)
-        if my_history.count("C") > my_history.count("D"):
-            return "C"
-        else:
-            return "D"
 
 
 class Prober:
