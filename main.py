@@ -2,7 +2,10 @@ from programs import *
 
 # from numpy import random
 
-score_matrix = [[3, 0], [5, 1]]
+score_matrix = [
+    [3, 0],
+    [5, 1],
+]
 
 programs = [
     AllC(),
@@ -28,9 +31,11 @@ for i in range(num_programs * copies):
     for j in range(i + 1, num_programs * copies):
         p1 = programs[i // copies]
         p1_history = ""
+        p1.matches += 1
 
         p2 = programs[j // copies]
         p2_history = ""
+        p2.matches += 1
 
         for k in range(rounds):
             p1_state = ";".join([str(k), p1_history, p2_history])
@@ -49,6 +54,9 @@ for i in range(num_programs * copies):
             p1_history += p1_response
             p2_history += p2_response
 
+print("-" * 50)
+print(" " + "Strategy Name".ljust(25, " ") + "| Avg Score")
+
 for i in range(num_programs):
     # Sort programs by score
     for j in range(i + 1, num_programs):
@@ -56,6 +64,11 @@ for i in range(num_programs):
             programs[i], programs[j] = programs[j], programs[i]
 
     print("-" * 50)
-    print(" " + programs[i].name.ljust(25, " ") + "| " + str(programs[i].score))
+    print(
+        " "
+        + programs[i].name.ljust(25, " ")
+        + "| "
+        + str(round(programs[i].score / programs[i].matches))
+    )
 
 print("-" * 50)

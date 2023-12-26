@@ -5,6 +5,7 @@ from numpy import random
 class AllC:
     name = "All C"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         return "C"
@@ -13,6 +14,7 @@ class AllC:
 class TFT:
     name = "Tit For Tat"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -26,6 +28,7 @@ class TFT:
 class TF2T:
     name = "Tit For 2 Tats"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -42,6 +45,7 @@ class TF2T:
 class T2FT:
     name = "2 Tit For Tat"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -58,6 +62,7 @@ class T2FT:
 class SlowTFT:
     name = "Slow Tit For Tat"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -76,6 +81,7 @@ class SlowTFT:
 class SoftMajority:
     name = "Soft Majority"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -89,6 +95,7 @@ class SoftMajority:
 class Pavlov:
     name = "Pavlov"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -105,6 +112,7 @@ class Pavlov:
 class Friedman:
     name = "Friedman"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -119,6 +127,7 @@ class Friedman:
 class AllD:
     name = "All D"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         return "D"
@@ -127,6 +136,7 @@ class AllD:
 class Mistrust:
     name = "Mistrust"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -140,6 +150,7 @@ class Mistrust:
 class HardMajority:
     name = "Hard Majority"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -153,6 +164,7 @@ class HardMajority:
 class Prober:
     name = "Prober"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -172,6 +184,7 @@ class Prober:
 class Random:
     name = "Random"
     score = 0
+    matches = 0
 
     def reponse(self, state):
         return random.choice(["C", "D"])
