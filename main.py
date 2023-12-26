@@ -13,7 +13,7 @@ programs = [
     TF2T(),
     T2FT(),
     SlowTFT(),
-    SoftMajority(),
+    Majority(),
     Pavlov(),
     Punisher(),
     AllD(),
