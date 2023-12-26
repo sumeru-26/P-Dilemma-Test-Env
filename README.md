@@ -30,9 +30,9 @@ Punisher - Cooperate until the opponent defects once. Then only defect.
 
 Majority - Defect if the opponent has defected more than they have cooperated.
 
-Majority 5 - Same Rules as Majority but only considers last 5 turns.
+Majority 5 - Same Rules as Majority but only considers the last 5 turns.
 
-Majority 11 - Same Rules as Majority but only considers last 11 turns.
+Majority 11 - Same Rules as Majority but only considers the last 11 turns.
 
 Mistrust - Defect on the first move. Use the opponent's previous move for the current move.
 
