@@ -102,6 +102,22 @@ class Pavlov:
                 return "D"
 
 
+class Friedman:
+    name = "Friedman"
+    score = 0
+
+    def reponse(self, state):
+        tick, my_history, their_history = state.split(";")
+        tick = int(tick)
+        if tick == 0:
+            return "C"
+        else:
+            if their_history.count("D") > 0:
+                return "D"
+            else:
+                return "C"
+
+
 # Nasty
 class AllD:
     name = "All D"

@@ -12,6 +12,7 @@ programs = [
     SlowTFT(),
     SoftMajority(),
     Pavlov(),
+    Friedman(),
     AllD(),
     Mistrust(),
     HardMajority(),
