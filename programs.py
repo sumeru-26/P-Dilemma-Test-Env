@@ -78,18 +78,18 @@ class SlowTFT:
                 return my_history[-1]
 
 
-class SoftMajority:
-    name = "Soft Majority"
+class Majority:
+    name = "Majority"
     score = 0
     matches = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
         tick = int(tick)
-        if my_history.count("C") >= my_history.count("D"):
-            return "C"
-        else:
+        if my_history.count("D") > my_history.count("C"):
             return "D"
+        else:
+            return "C"
 
 
 class Pavlov:
