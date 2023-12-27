@@ -4,6 +4,7 @@ from alternator import *
 from appeaser import *
 from average_copier import *
 from betterandbetter import *
+from doubler import *
 from inverse import *
 from rand import *
 from submission import *
@@ -38,6 +39,7 @@ programs = [
     AverageCopier(),
     NiceAverageCopier(),
     BetterAndBetter(),
+    Doubler(),
     Inverse(),
     Random(),
     Submission(),
