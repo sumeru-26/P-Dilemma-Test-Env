@@ -29,9 +29,8 @@ programs = [
 copies = 5
 num_programs = len(programs)
 
-for i in range(100):
-    rounds = round(-np.log(np.random.random()) / (1.0 / 150))
-    print(rounds)
+for i in range(10):
+    rounds = 100 + round(-np.log(np.random.random()) * 50)
 
     for i in range(num_programs * copies):
         for j in range(i + 1, num_programs * copies):
