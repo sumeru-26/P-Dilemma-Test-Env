@@ -7,6 +7,7 @@ from betterandbetter import *
 from doubler import *
 from forgiver import *
 from gradualkiller import *
+from grudger import *
 from handshake import *
 from inverse import *
 from rand import *
@@ -43,6 +44,7 @@ programs = [
     Forgiver(),
     ForgivingTitForTat(),
     GradualKiller(),
+    Grudger(),
     Inverse(),
     Handshake(),
     Random(),

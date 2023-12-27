@@ -18,20 +18,6 @@ class Pavlov:
                 return "D"
 
 
-class Punisher:
-    name = "Punisher"
-    score = 0
-    rounds = 0
-
-    def reponse(self, state):
-        tick, my_history, their_history = state.split(";")
-        tick = int(tick)
-        if their_history.count("D") > 0:
-            return "D"
-        else:
-            return "C"
-
-
 class Majority:
     name = "Majority"
     score = 0
