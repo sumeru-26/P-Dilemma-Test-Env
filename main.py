@@ -1,4 +1,5 @@
 from programs import *
+from alternator import *
 from inverse import *
 from submission import *
 
@@ -28,6 +29,7 @@ programs = [
     Prober(),
     JOSS(),
     LSD(),
+    Alternator(),
     Inverse(),
     Submission(),
 ]
