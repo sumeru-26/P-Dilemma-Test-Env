@@ -1,6 +1,7 @@
 from programs import *
 from alternator import *
 from appeaser import *
+from average_copier import *
 from inverse import *
 from submission import *
 
@@ -32,12 +33,14 @@ programs = [
     LSD(),
     Alternator(),
     Appeaser(),
+    AverageCopier(),
+    NiceAverageCopier(),
     Inverse(),
     Submission(),
 ]
 
 copies = 5
-sessions = 1
+sessions = 4
 
 num_programs = len(programs)
 
