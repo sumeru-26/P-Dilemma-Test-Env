@@ -6,6 +6,7 @@ from average_copier import *
 from betterandbetter import *
 from doubler import *
 from forgiver import *
+from handshake import *
 from inverse import *
 from rand import *
 from titfortat import *
@@ -28,7 +29,7 @@ programs = [
     # LSC(),
     # Mistrust(),
     # Prober(),
-    # JOSS(),
+    JOSS(),
     # LSD(),
     Cooperator(),
     Defector(),
@@ -41,6 +42,7 @@ programs = [
     Forgiver(),
     ForgivingTitForTat(),
     Inverse(),
+    Handshake(),
     Random(),
     TitForTat(),
     TitFor2Tats(),
