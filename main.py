@@ -1,5 +1,7 @@
 from programs import *
+from inverse import *
 from submission import *
+
 import numpy as np
 
 score_matrix = [
@@ -26,11 +28,12 @@ programs = [
     Prober(),
     JOSS(),
     LSD(),
+    Inverse(),
     Submission(),
 ]
 
 copies = 5
-sessions = 10
+sessions = 1
 
 num_programs = len(programs)
 
@@ -64,6 +67,7 @@ for i in range(sessions):
 
                 p1_history += p1_response
                 p2_history += p2_response
+
 
 print("-" * 50)
 print(" " + "Strategy Name".ljust(25, " ") + "| Avg Score Per Round")
