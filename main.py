@@ -1,5 +1,6 @@
 from programs import *
 from alternator import *
+from appeaser import *
 from inverse import *
 from submission import *
 
@@ -30,6 +31,7 @@ programs = [
     JOSS(),
     LSD(),
     Alternator(),
+    Appeaser(),
     Inverse(),
     Submission(),
 ]
