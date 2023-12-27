@@ -6,6 +6,7 @@ from average_copier import *
 from betterandbetter import *
 from doubler import *
 from forgiver import *
+from gradualkiller import *
 from handshake import *
 from inverse import *
 from rand import *
@@ -41,6 +42,7 @@ programs = [
     Doubler(),
     Forgiver(),
     ForgivingTitForTat(),
+    GradualKiller(),
     Inverse(),
     Handshake(),
     Random(),
