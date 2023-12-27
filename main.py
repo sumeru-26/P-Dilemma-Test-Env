@@ -30,22 +30,25 @@ programs = [
 ]
 
 copies = 5
+sessions = 10
+
 num_programs = len(programs)
 
-for i in range(10):
+for i in range(sessions):
     rounds = 100 + round(-np.log(np.random.random()) * 50)
 
     for i in range(num_programs * copies):
         for j in range(i + 1, num_programs * copies):
             p1 = programs[i // copies]
             p1_history = ""
-            p1.matches += 1
 
             p2 = programs[j // copies]
             p2_history = ""
-            p2.matches += 1
 
             for k in range(rounds):
+                p1.rounds += 1
+                p2.rounds += 1
+
                 p1_state = ";".join([str(k), p1_history, p2_history])
                 p1_response = p1.reponse(p1_state)
 
@@ -63,7 +66,7 @@ for i in range(10):
                 p2_history += p2_response
 
 print("-" * 50)
-print(" " + "Strategy Name".ljust(25, " ") + "| Avg Score")
+print(" " + "Strategy Name".ljust(25, " ") + "| Avg Score Per Round")
 
 for i in range(num_programs):
     # Sort programs by score
@@ -76,7 +79,7 @@ for i in range(num_programs):
         " "
         + programs[i].name.ljust(25, " ")
         + "| "
-        + str(round(programs[i].score / programs[i].matches))
+        + str(round(programs[i].score / programs[i].rounds, 3))
     )
 
 print("-" * 50)

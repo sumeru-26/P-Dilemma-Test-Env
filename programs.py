@@ -5,7 +5,7 @@ from numpy import random
 class AllC:
     name = "All C"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         return "C"
@@ -14,7 +14,7 @@ class AllC:
 class TFT:
     name = "Tit For Tat"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -28,7 +28,7 @@ class TFT:
 class TF2T:
     name = "Tit For 2 Tats"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -45,7 +45,7 @@ class TF2T:
 class T2FT:
     name = "2 Tits For Tat"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -62,7 +62,7 @@ class T2FT:
 class SlowTFT:
     name = "Slow Tit For Tat"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -81,7 +81,7 @@ class SlowTFT:
 class Pavlov:
     name = "Pavlov"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -98,7 +98,7 @@ class Pavlov:
 class Punisher:
     name = "Punisher"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -112,7 +112,7 @@ class Punisher:
 class Majority:
     name = "Majority"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -126,7 +126,7 @@ class Majority:
 class Majority5:
     name = "Majority 5"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -140,7 +140,7 @@ class Majority5:
 class Majority11:
     name = "Majority 11"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -154,7 +154,7 @@ class Majority11:
 class LSN:
     name = "Last Step Neutral"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -174,7 +174,7 @@ class LSN:
 class LSC:
     name = "Last Step Cooperative"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -201,7 +201,7 @@ class LSC:
 class AllD:
     name = "All D"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         return "D"
@@ -210,7 +210,7 @@ class AllD:
 class Random:
     name = "Random"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         return random.choice(["C", "D"])
@@ -219,7 +219,7 @@ class Random:
 class Mistrust:
     name = "Mistrust"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -233,7 +233,7 @@ class Mistrust:
 class Prober:
     name = "Prober"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -252,7 +252,7 @@ class Prober:
 class JOSS:
     name = "JOSS"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
@@ -272,7 +272,7 @@ class JOSS:
 class LSD:
     name = "Last Step Defective"
     score = 0
-    matches = 0
+    rounds = 0
 
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
