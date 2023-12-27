@@ -1,4 +1,5 @@
 from programs import *
+from submission import *
 import numpy as np
 
 score_matrix = [
@@ -25,12 +26,13 @@ programs = [
     Prober(),
     JOSS(),
     LSD(),
+    Submission(),
 ]
 
 copies = 5
 num_programs = len(programs)
 
-for i in range(10):
+for i in range(1):
     rounds = 100 + round(-np.log(np.random.random()) * 50)
 
     for i in range(num_programs * copies):
