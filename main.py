@@ -1,7 +1,9 @@
 from programs import *
+from all import *
 from alternator import *
 from appeaser import *
 from average_copier import *
+from betterandbetter import *
 from inverse import *
 from submission import *
 
@@ -13,7 +15,6 @@ score_matrix = [
 ]
 
 programs = [
-    AllC(),
     TFT(),
     TF2T(),
     T2FT(),
@@ -25,16 +26,18 @@ programs = [
     Majority11(),
     LSN(),
     LSC(),
-    AllD(),
     Random(),
     Mistrust(),
     Prober(),
     JOSS(),
     LSD(),
+    Cooperator(),
+    Defector(),
     Alternator(),
     Appeaser(),
     AverageCopier(),
     NiceAverageCopier(),
+    BetterAndBetter(),
     Inverse(),
     Submission(),
 ]
