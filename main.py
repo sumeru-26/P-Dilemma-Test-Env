@@ -1,6 +1,5 @@
 from programs import *
-
-# from numpy import random
+import numpy as np
 
 score_matrix = [
     [3, 0],
@@ -19,6 +18,7 @@ programs = [
     Majority5(),
     Majority11(),
     LSN(),
+    LSC(),
     AllD(),
     Mistrust(),
     Prober(),
@@ -27,35 +27,38 @@ programs = [
 ]
 
 copies = 5
-rounds = 150
 num_programs = len(programs)
 
-for i in range(num_programs * copies):
-    for j in range(i + 1, num_programs * copies):
-        p1 = programs[i // copies]
-        p1_history = ""
-        p1.matches += 1
+for i in range(100):
+    rounds = round(-np.log(np.random.random()) / (1.0 / 150))
+    print(rounds)
 
-        p2 = programs[j // copies]
-        p2_history = ""
-        p2.matches += 1
+    for i in range(num_programs * copies):
+        for j in range(i + 1, num_programs * copies):
+            p1 = programs[i // copies]
+            p1_history = ""
+            p1.matches += 1
 
-        for k in range(rounds):
-            p1_state = ";".join([str(k), p1_history, p2_history])
-            p1_response = p1.reponse(p1_state)
+            p2 = programs[j // copies]
+            p2_history = ""
+            p2.matches += 1
 
-            p2_state = ";".join([str(k), p2_history, p1_history])
-            p2_response = p2.reponse(p2_state)
+            for k in range(rounds):
+                p1_state = ";".join([str(k), p1_history, p2_history])
+                p1_response = p1.reponse(p1_state)
 
-            p1.score += score_matrix[ord(p1_response) - ord("C")][
-                ord(p2_response) - ord("C")
-            ]
-            p2.score += score_matrix[ord(p2_response) - ord("C")][
-                ord(p1_response) - ord("C")
-            ]
+                p2_state = ";".join([str(k), p2_history, p1_history])
+                p2_response = p2.reponse(p2_state)
 
-            p1_history += p1_response
-            p2_history += p2_response
+                p1.score += score_matrix[ord(p1_response) - ord("C")][
+                    ord(p2_response) - ord("C")
+                ]
+                p2.score += score_matrix[ord(p2_response) - ord("C")][
+                    ord(p1_response) - ord("C")
+                ]
+
+                p1_history += p1_response
+                p2_history += p2_response
 
 print("-" * 50)
 print(" " + "Strategy Name".ljust(25, " ") + "| Avg Score")
