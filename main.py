@@ -32,7 +32,7 @@ programs = [
 copies = 5
 num_programs = len(programs)
 
-for i in range(1):
+for i in range(10):
     rounds = 100 + round(-np.log(np.random.random()) * 50)
 
     for i in range(num_programs * copies):

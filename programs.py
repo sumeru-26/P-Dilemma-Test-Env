@@ -117,7 +117,7 @@ class Majority:
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
         tick = int(tick)
-        if my_history.count("D") > my_history.count("C"):
+        if their_history.count("D") > their_history.count("C"):
             return "D"
         else:
             return "C"
@@ -131,7 +131,7 @@ class Majority5:
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
         tick = int(tick)
-        if my_history[-5:].count("D") > my_history[-5:].count("C"):
+        if their_history[-5:].count("D") > their_history[-5:].count("C"):
             return "D"
         else:
             return "C"
@@ -145,7 +145,7 @@ class Majority11:
     def reponse(self, state):
         tick, my_history, their_history = state.split(";")
         tick = int(tick)
-        if my_history[-11:].count("D") > my_history[-11:].count("C"):
+        if their_history[-11:].count("D") > their_history[-11:].count("C"):
             return "D"
         else:
             return "C"
