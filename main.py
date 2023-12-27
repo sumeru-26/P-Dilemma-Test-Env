@@ -5,8 +5,10 @@ from appeaser import *
 from average_copier import *
 from betterandbetter import *
 from doubler import *
+from forgiver import *
 from inverse import *
 from rand import *
+from titfortat import *
 from submission import *
 
 import numpy as np
@@ -17,21 +19,17 @@ score_matrix = [
 ]
 
 programs = [
-    TFT(),
-    TF2T(),
-    T2FT(),
-    SlowTFT(),
-    Pavlov(),
-    Punisher(),
-    Majority(),
-    Majority5(),
-    Majority11(),
-    LSN(),
-    LSC(),
-    Mistrust(),
-    Prober(),
-    JOSS(),
-    LSD(),
+    # Pavlov(),
+    # Punisher(),
+    # Majority(),
+    # Majority5(),
+    # Majority11(),
+    # LSN(),
+    # LSC(),
+    # Mistrust(),
+    # Prober(),
+    # JOSS(),
+    # LSD(),
     Cooperator(),
     Defector(),
     Alternator(),
@@ -40,13 +38,18 @@ programs = [
     NiceAverageCopier(),
     BetterAndBetter(),
     Doubler(),
+    Forgiver(),
+    ForgivingTitForTat(),
     Inverse(),
     Random(),
+    TitForTat(),
+    TitFor2Tats(),
+    TwoTitsForTat(),
     Submission(),
 ]
 
 copies = 5
-sessions = 4
+sessions = 10
 
 num_programs = len(programs)
 
@@ -84,6 +87,7 @@ for i in range(sessions):
 
 print("-" * 50)
 print(" " + "Strategy Name".ljust(25, " ") + "| Avg Score Per Round")
+print("-" * 50)
 
 for i in range(num_programs):
     # Sort programs by score
@@ -91,7 +95,7 @@ for i in range(num_programs):
         if programs[j].score > programs[i].score:
             programs[i], programs[j] = programs[j], programs[i]
 
-    print("-" * 50)
+    # print("-" * 50)
     print(
         " "
         + programs[i].name.ljust(25, " ")
