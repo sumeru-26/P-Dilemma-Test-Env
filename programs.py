@@ -1,16 +1,6 @@
 from numpy import random
 
 
-# Nice Programs
-class AllC:
-    name = "All C"
-    score = 0
-    rounds = 0
-
-    def reponse(self, state):
-        return "C"
-
-
 class TFT:
     name = "Tit For Tat"
     score = 0
@@ -195,25 +185,6 @@ class LSC:
                         return "C"
             else:
                 return "C"
-
-
-# Nasty
-class AllD:
-    name = "All D"
-    score = 0
-    rounds = 0
-
-    def reponse(self, state):
-        return "D"
-
-
-class Random:
-    name = "Random"
-    score = 0
-    rounds = 0
-
-    def reponse(self, state):
-        return random.choice(["C", "D"])
 
 
 class Mistrust:

@@ -5,6 +5,7 @@ from appeaser import *
 from average_copier import *
 from betterandbetter import *
 from inverse import *
+from rand import *
 from submission import *
 
 import numpy as np
@@ -26,7 +27,6 @@ programs = [
     Majority11(),
     LSN(),
     LSC(),
-    Random(),
     Mistrust(),
     Prober(),
     JOSS(),
@@ -39,6 +39,7 @@ programs = [
     NiceAverageCopier(),
     BetterAndBetter(),
     Inverse(),
+    Random(),
     Submission(),
 ]
 
