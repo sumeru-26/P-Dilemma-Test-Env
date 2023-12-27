@@ -1,18 +1,19 @@
 from programs import *
-from all import *
-from alternator import *
-from appeaser import *
-from average_copier import *
-from betterandbetter import *
-from doubler import *
-from forgiver import *
-from gradualkiller import *
-from grudger import *
-from handshake import *
-from inverse import *
-from rand import *
-from titfortat import *
 from submission import *
+
+from strategies.all import *
+from strategies.alternator import *
+from strategies.appeaser import *
+from strategies.average_copier import *
+from strategies.betterandbetter import *
+from strategies.doubler import *
+from strategies.forgiver import *
+from strategies.gradualkiller import *
+from strategies.grudger import *
+from strategies.handshake import *
+from strategies.inverse import *
+from strategies.rand import *
+from strategies.titfortat import *
 
 import numpy as np
 
