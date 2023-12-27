@@ -41,3 +41,7 @@ Prober - Cooperate on the first move and defect on the next two. If the opponent
 JOSS - Same as TFT but cooperates only with 90% probability.
 
 Last Step Neutral - Always cooperates if the opponent cooperates, and retaliates with 50% probability.
+
+Last Step Cooperative - Always cooperates if the opponent cooperates, and retaliates with 80% probability to CD and 20% probability to DD.
+
+Last Step Defective - Retaliates to XC with 20% probability, and retaliates with 100% probability to CD and 80% probability to DD.

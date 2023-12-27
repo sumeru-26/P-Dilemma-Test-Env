@@ -207,6 +207,15 @@ class AllD:
         return "D"
 
 
+class Random:
+    name = "Random"
+    score = 0
+    matches = 0
+
+    def reponse(self, state):
+        return random.choice(["C", "D"])
+
+
 class Mistrust:
     name = "Mistrust"
     score = 0
@@ -260,11 +269,27 @@ class JOSS:
                 return "D"
 
 
-# Neither
-class Random:
-    name = "Random"
+class LSD:
+    name = "Last Step Defective"
     score = 0
     matches = 0
 
     def reponse(self, state):
-        return random.choice(["C", "D"])
+        tick, my_history, their_history = state.split(";")
+        tick = int(tick)
+        if tick == 0:
+            return "C"
+        else:
+            if their_history[-1] == "D":
+                if my_history[-1] == "D":
+                    if random.random() < 0.8:
+                        return "D"
+                    else:
+                        return "C"
+                else:
+                    return "D"
+            else:
+                if random.random() < 0.2:
+                    return "D"
+                else:
+                    return "C"

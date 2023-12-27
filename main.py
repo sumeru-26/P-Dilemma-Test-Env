@@ -20,10 +20,11 @@ programs = [
     LSN(),
     LSC(),
     AllD(),
+    Random(),
     Mistrust(),
     Prober(),
     JOSS(),
-    Random(),
+    LSD(),
 ]
 
 copies = 5
