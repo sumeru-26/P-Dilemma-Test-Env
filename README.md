@@ -6,7 +6,7 @@ Testing environment setup with some basic strategies for the Iterated Prisoner's
 
 Copies - Number of copies of a single strategy present in the tournament.
 
-Sessions - Number of ~150 rounds matches to play.
+Strategies - Specify strategies to play in the tournament.
 
 ## Strategies Implemented
 
