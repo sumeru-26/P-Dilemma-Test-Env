@@ -1,113 +1,34 @@
-from programs import *
 from submission import *
 
-from strategies.all import *
-from strategies.alternator import *
-from strategies.appeaser import *
-from strategies.average_copier import *
-from strategies.betterandbetter import *
-from strategies.doubler import *
-from strategies.forgiver import *
-from strategies.gradualkiller import *
-from strategies.grudger import *
-from strategies.handshake import *
-from strategies.inverse import *
-from strategies.rand import *
-from strategies.titfortat import *
-
-import numpy as np
-
-score_matrix = [
-    [3, 0],
-    [5, 1],
-]
-
-programs = [
-    # Pavlov(),
-    # Punisher(),
-    # Majority(),
-    # Majority5(),
-    # Majority11(),
-    # LSN(),
-    # LSC(),
-    # Mistrust(),
-    # Prober(),
-    JOSS(),
-    # LSD(),
-    Cooperator(),
-    Defector(),
-    Alternator(),
-    Appeaser(),
-    AverageCopier(),
-    NiceAverageCopier(),
-    BetterAndBetter(),
-    Doubler(),
-    Forgiver(),
-    ForgivingTitForTat(),
-    GradualKiller(),
-    Grudger(),
-    Inverse(),
-    Handshake(),
-    Random(),
-    TitForTat(),
-    TitFor2Tats(),
-    TwoTitsForTat(),
-    Submission(),
-]
+import axelrod as axl
 
 copies = 5
-sessions = 10
+strategies = [Submission] + axl.basic_strategies
 
-num_programs = len(programs)
+players = []
+for s in strategies:
+    for _ in range(copies):
+        players.append(s())
 
-for i in range(sessions):
-    rounds = 100 + round(-np.log(np.random.random()) * 50)
-
-    for i in range(num_programs * copies):
-        for j in range(i + 1, num_programs * copies):
-            p1 = programs[i // copies]
-            p1_history = ""
-
-            p2 = programs[j // copies]
-            p2_history = ""
-
-            for k in range(rounds):
-                p1.rounds += 1
-                p2.rounds += 1
-
-                p1_state = ";".join([str(k), p1_history, p2_history])
-                p1_response = p1.reponse(p1_state)
-
-                p2_state = ";".join([str(k), p2_history, p1_history])
-                p2_response = p2.reponse(p2_state)
-
-                p1.score += score_matrix[ord(p1_response) - ord("C")][
-                    ord(p2_response) - ord("C")
-                ]
-                p2.score += score_matrix[ord(p2_response) - ord("C")][
-                    ord(p1_response) - ord("C")
-                ]
-
-                p1_history += p1_response
-                p2_history += p2_response
+tournament = axl.Tournament(
+    players,
+    turns=150,
+    repetitions=1,
+)
+results = tournament.play(progress_bar=True)
 
 
 print("-" * 50)
 print(" " + "Strategy Name".ljust(25, " ") + "| Avg Score Per Round")
 print("-" * 50)
 
-for i in range(num_programs):
-    # Sort programs by score
-    for j in range(i + 1, num_programs):
-        if programs[j].score > programs[i].score:
-            programs[i], programs[j] = programs[j], programs[i]
-
-    # print("-" * 50)
+summary_data = results.summarise()
+for i in range(0, len(players)):
     print(
         " "
-        + programs[i].name.ljust(25, " ")
+        + summary_data[i].Name.ljust(25, " ")
         + "| "
-        + str(round(programs[i].score / programs[i].rounds, 3))
+        + str(round(summary_data[i].Median_score, 3))
     )
 
 print("-" * 50)
