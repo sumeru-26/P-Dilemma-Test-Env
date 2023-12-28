@@ -3,7 +3,16 @@ from submission import *
 import axelrod as axl
 
 copies = 5
-strategies = [Submission] + axl.basic_strategies
+strategies = [
+    Submission,
+    axl.TitFor2Tats,
+    axl.TwoTitsForTat,
+    axl.HardTitFor2Tats,
+    axl.HardTitForTat,
+    axl.SlowTitForTwoTats2,
+    axl.RandomTitForTat,
+    axl.SneakyTitForTat,
+] + axl.basic_strategies
 
 players = []
 for s in strategies:
