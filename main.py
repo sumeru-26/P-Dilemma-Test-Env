@@ -40,16 +40,6 @@ for i in summary_data:
     else:
         data_dict.update({i.Name : i.Median_score})
 
-'''
-for i in range(0, len(players)):
-    print(
-        " "
-        + summary_data[i].Name.ljust(25, " ")
-        + "| "
-        + str(round(summary_data[i].Median_score, 3))
-    )
-'''
-
 for name,score in data_dict.items():
     print(
         " "
