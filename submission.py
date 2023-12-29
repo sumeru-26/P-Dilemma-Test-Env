@@ -8,12 +8,26 @@ class Submission(Player):
 
     def __init__(self):
         super().__init__()
-        self.cur_state = 1
+        self.cur_state = 5
 
     def transition_state(self,action):
         transitions = (
-            (1,C,1,C),
-            (1,D,1,D),
+            (1,C,3,C),
+            (1,D,8,C),
+            (2,C,1,D),
+            (2,D,5,D),
+            (3,C,3,D),
+            (3,D,8,D),
+            (4,C,7,D),
+            (4,D,5,C),
+            (5,C,5,C),
+            (5,D,7,D),
+            (6,C,3,D),
+            (6,D,8,D),
+            (7,C,4,C),
+            (7,D,6,D),
+            (8,C,3,C),
+            (8,D,4,D),
         )
         if action == C:
             transition = transitions[self.cur_state*2-2]
