@@ -1,5 +1,10 @@
 from axelrod.action import Action
 from axelrod.player import Player
+import axelrod as axl
+import numpy as np
+import joblib
+import random
+
 
 C, D = Action.C, Action.D
 
@@ -36,7 +41,30 @@ class Submission(Player):
         self.cur_state = transition[2]
         return transition[3]
 
+    def strategy(self, opponent: Player) -> Action:
+        
+        #first move
+        if not self.history: return C
+        
+        move = self.transition_state(opponent.history[-1])
+        return move
+    
+class TunedSubmission(Player):
+    name = 'TunedSubmission'
+    
 
+    def __init__(self):
+        super().__init__()
+        self.cur_state = 7
+        self.transitions = transitions = ((0, C, 0, C), (0, D, 5, D), (1, C, 1, D), (1, D, 3, D), (2, C, 0, C), (2, D, 1, C), (3, C, 1, D), (3, D, 6, D), (4, C, 4, D), (4, D, 7, D), (5, C, 1, C), (5, D, 3, D), (6, C, 1, C), (6, D, 6, C), (7, C, 7, C), (7, D, 2, C))
+
+    def transition_state(self,action):
+        if action == C:
+            transition = self.transitions[self.cur_state*2]
+        else:
+            transition = self.transitions[self.cur_state*2+1]
+        self.cur_state = transition[2]
+        return transition[3]
 
     def strategy(self, opponent: Player) -> Action:
         

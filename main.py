@@ -4,9 +4,9 @@ import axelrod as axl
 
 copies = 5
 
-'''
 strategies = [
     Submission,
+    TunedSubmission,
     axl.TitFor2Tats,
     axl.TwoTitsForTat,
     axl.HardTitFor2Tats,
@@ -14,21 +14,37 @@ strategies = [
     axl.SlowTitForTwoTats2,
     axl.RandomTitForTat,
     axl.SneakyTitForTat,
-] + axl.basic_strategies
-'''
-
-strategies = [
-    Submission,
+    axl.SpitefulTitForTat,
+    axl.CautiousQLearner,
+    axl.ArrogantQLearner,
     axl.Grudger,
-    axl.TitForTat,
-    axl.SlowTitForTwoTats2,
-    axl.TitFor2Tats,
+    axl.Grumpy,
+    axl.Defector,
     axl.Detective,
-    axl.GoByMajority5,
-    axl.Alternator,
+    axl.Bully,
+    axl.AntiTitForTat,
+    axl.AdaptiveTitForTat,
+    axl.MathConstantHunter,
+    axl.OriginalGradual,
     axl.Random,
-    axl.Cooperator,
-    axl.Defector
+    axl.OmegaTFT,
+    axl.Adaptive,
+    axl.APavlov2011,
+    axl.AverageCopier,
+    axl.GoByMajority5,
+    axl.HardGoByMajority10,
+    axl.Doubler,
+    axl.CyclerDC,
+    axl.CyclerCCCCCD,
+    axl.Inverse,
+    axl.Prober4,
+    axl.Retaliate3,
+    axl.TrickyCooperator,
+    axl.TrickyDefector,
+    axl.SecondByEatherley,
+    axl.ZDExtort4,
+    axl.UsuallyCooperates,
+    axl.EvolvedANN
 ]
 
 
@@ -58,6 +74,8 @@ for i in summary_data:
         data_dict.update({i.Name : (data_dict[i.Name]+i.Median_score)/2})
     else:
         data_dict.update({i.Name : i.Median_score})
+
+data_dict = dict(sorted(data_dict.items(),key= lambda x:x[1], reverse=True))
 
 for name,score in data_dict.items():
     print(
