@@ -7,6 +7,8 @@ copies = 5
 strategies = [
     Submission,
     TunedSubmission,
+    PFSM,
+    axl.TitForTat,
     axl.TitFor2Tats,
     axl.TwoTitsForTat,
     axl.HardTitFor2Tats,
@@ -46,7 +48,6 @@ strategies = [
     axl.UsuallyCooperates,
     axl.EvolvedANN
 ]
-
 
 
 players = []

@@ -15,6 +15,11 @@ class Submission(Player):
         super().__init__()
         self.cur_state = 5
 
+    '''
+    Transitions represented by
+    (current state, opponent's last move, new state, our move to play)
+    '''
+
     def transition_state(self,action):
         transitions = (
             (1,C,3,C),
@@ -73,3 +78,36 @@ class TunedSubmission(Player):
         
         move = self.transition_state(opponent.history[-1])
         return move
+
+class PFSM(Player):
+    name = 'PFSM'
+
+    def __init__(self):
+        super().__init__()
+        self.cur_state = 0
+
+    '''
+    Transitions represented by
+    (current state, opponent's last move, new state, the probability of us playing C)
+    '''
+
+    def transition_state(self,action):
+        transitions = (
+            (0,C,0,1),
+            (0,D,0,0)
+        )
+        if action == C:
+            return transitions[self.cur_state*2][3]
+        else:
+            return transitions[self.cur_state*2+1][3]
+
+    def strategy(self, opponent: Player) -> Action:
+        
+        #first move
+        if not self.history: return C
+        
+        c_prob = self.transition_state(opponent.history[-1])
+        if random.random() < c_prob:
+            return C
+        else:
+            return D
