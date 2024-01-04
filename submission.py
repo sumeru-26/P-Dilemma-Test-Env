@@ -55,9 +55,9 @@ class TunedSubmission(Player):
 
     def __init__(self):
         super().__init__()
-        self.cur_state = 7
-        self.transitions = transitions = ((0, C, 0, C), (0, D, 5, D), (1, C, 1, D), (1, D, 3, D), (2, C, 0, C), (2, D, 1, C), (3, C, 1, D), (3, D, 6, D), (4, C, 4, D), (4, D, 7, D), (5, C, 1, C), (5, D, 3, D), (6, C, 1, C), (6, D, 6, C), (7, C, 7, C), (7, D, 2, C))
-
+        self.cur_state = 3
+        self.transitions = ((0, C, 7, C), (0, D, 1, D), (1, C, 2, D), (1, D, 1, D), (2, C, 2, C), (2, D, 7, C), (3, C, 3, C), (3, D, 7, D), (4, C, 4, D), (4, D, 6, C), (5, C, 7, D), (5, D, 2, C), (6, C, 6, D), (6, D, 5, C), (7, C, 6, D), (7, D, 7, D))
+    
     def transition_state(self,action):
         if action == C:
             transition = self.transitions[self.cur_state*2]
