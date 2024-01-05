@@ -1,4 +1,5 @@
 from submission import *
+from final import Final
 
 import axelrod as axl
 
@@ -7,7 +8,7 @@ copies = 5
 strategies = [
     Submission,
     TunedSubmission,
-    PFSM,
+    Final,
     axl.TitForTat,
     axl.TitFor2Tats,
     axl.TwoTitsForTat,

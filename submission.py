@@ -1,8 +1,5 @@
 from axelrod.action import Action
 from axelrod.player import Player
-import axelrod as axl
-import numpy as np
-import joblib
 import random
 
 
